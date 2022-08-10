@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+:root{
+  --Strongcyan: hsl(172, 67%, 45%);
+  --Verydarkcyan: hsl(183, 100%, 15%);
+  --Darkgrayishcyan: hsl(186, 14%, 43%);
+  --Grayishcyan: hsl(184, 14%, 56%);
+  --Lightgrayishcyan: hsl(185, 41%, 84%);
+  --Verylightgrayishcyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: 'Space Mono', monospace;
+  background-color:var(--Lightgrayishcyan);
+}
+.main{
+  margin-block: 2rem;
+  width: calc(100% - 8%);
+  margin-inline: auto;
+}
+.title{
+  text-align: center;
+  color: var(--Verydarkcyan);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding-bottom: 2rem;
+}
+.formulario{
+  max-width: 60rem;
+  margin: auto;
+  background-color: var(--White);
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+}
+.formulario .input{
+  position: relative;
+
+}
+.formulario .input img{
+  position: absolute;
+  bottom:18px;
+  left: 10px;
+}
+.formulario .input label,
+.formulario  label{
+  color: var(--Darkgrayishcyan);
+  display: block;
+  margin-block: 0.5rem;
+}
+.formulario .input input{
+  width: 100%;
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding-block: 1rem;
+  padding-inline-start: 15rem;
+  padding-inline-end: 1.5rem;
+  border: none;
+  background-color: var(--Verylightgrayishcyan);
+  color: var(--Verydarkcyan);
+  text-align: right;
+  font-family: 'Space Mono', monospace;
+
+}
+.formulario .buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding-top: 5rem;
+  position: relative;
+
+}
+.formulario .buttons .title-btn{
+  position: absolute;
+  top: 0;
+}
+.cta{
+  width: 100%;
+  padding-block: 0.6rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  border: none;
+  border-radius: 0.8rem;
+  color: var(--White);
+  background-color: var(--Verydarkcyan);
+  cursor: pointer;
+}
+.cta.active{
+  color: var(--Verydarkcyan);
+  background-color: var(--Strongcyan);
+}
+.cta:hover{
+  color: var(--Verydarkcyan);
+  background-color: var(--Strongcyan);
+}
+.cta.cta-m{
+  background-color: var(--Strongcyan);
+  text-transform: uppercase;
+  color: var(--Verydarkcyan);
+}
+.input-custom{
+  font-family: 'Space Mono', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display:block;
+  width: 100%;
+  background-color: var(--Verylightgrayishcyan);
+  border: none;
+  text-align: center;
+  
+}
+.input-custom:placeholder-shown{
+  font-size: 2rem;
+  font-weight: 700;
+}
+.results{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  background-color: var(--Verydarkcyan);
+  padding-block: 2.8rem;
+  padding-inline: 1.5rem;
+  border-radius: 1.5rem;
+}
+.results .col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.results .col .texts p{
+  color: var(--White);
+}
+.results .col .texts span{
+  color: var(--Grayishcyan);
+}
+.results .col  h2{
+  color: var(--Strongcyan);
+  font-size: 3rem;
+
+}
+small{
+  display: none;
+  color: red;
+  float: right;
+  margin-top: -2.5rem;
+}
+.show-error-msg{
+  display: block;
+}
+@media (min-width:980px){
+  body{
+    overflow-x: hidden;
+  }
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 98vh;
+    margin: 0;
+  }
+  .title{
+    padding-top: 15rem;
+    padding-block-end: 0;
+  }
+  .formulario{
+    max-width: 95rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,min-content);
+    column-gap: 5rem;
+
+    grid-template-areas: 
+    "input     results"
+    "buttons   results"
+    "input2    results";
+
+  }
+
+  .input-1{
+    grid-area: input;
+  }
+  .input-2{
+    grid-area: input2;
+  }
+  .buttons{
+    grid-area: buttons;
+  }
+  .results{
+    grid-area: results;
+  }
+  .results{
+    padding-block: 4.5rem;
+    padding-inline: 4.5rem;
+    gap: 5rem;
+  }
+}
+
+@media (min-width:1200px) { 
+ 
+  .formulario{
+    max-width: 100rem;
+  }
+  .formulario .buttons{
+    grid-template-columns: repeat(3,1fr);
+  }
+ 
+  .results .col h2{
+    font-size: 3.5rem;
+  }
+  
+  
+}

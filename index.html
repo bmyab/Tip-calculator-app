@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+  <main class="main">
+    <h1 class="title">Spli<br>tter</h1>
+    <form action="#" class="formulario" id="form">
+      <div class="input input-1">
+        <label for="dolar">Bill</label>
+        <img src="assets/images/icon-dollar.svg" alt="icon dollar" >
+        <input type="number" name="dolar" placeholder="0.0" id="input-bill" >
+      </div>
+      <div class="buttons">
+        <label class="title-btn" for="Button">Select Tip %</label>
+        <button class="cta tip" type="submit">5%</button>
+        <button class="cta tip" type="submit">10%</button>
+        <button class="cta tip" type="submit">15%</button>
+        <button class="cta tip" type="submit">25%</button>
+        <button class="cta tip" type="submit">50%</button>
+        <input class="input-custom" id="input-custom" type="number" placeholder="Custom">
+      </div>
+      <div class="input input-2">
+        <label for="people">Number of People</label>
+        <small class="error-msg">Can't be zero</small>
+        <img src="assets/images/icon-person.svg" alt="icon person">
+        <input type="number" name="people" placeholder="1" id="input-people">
+      </div>
+      <div class="results">
+        <div class="col">
+          <div class="texts">
+            <p>Tip Amount</p>
+            <span>/ person</span>
+          </div>
+          <h2 class="value">$0.00</h2>
+        </div>
+        <div class="col">
+          <div class="texts">
+            <p>Total</p>
+            <span>/ person</span>
+          </div>
+          <h2 class="value">$0.00</h2>
+        </div>
+        <button class="cta cta-m">Reset</button>
+      </div>
+    </form>
+   
+  </main>
+</body>
+<script src="assets/js/index.js"></script>
+</html>
